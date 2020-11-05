@@ -1,11 +1,18 @@
-<div class="m-5">
-  <h1>Cocktails</h1>
+<% if @cocktails.any? %>
+  <h3>List of cocktails</h3>
 
-  <ul class="list-group">
+  <ul>
     <% @cocktails.each do |cocktail| %>
-      <li class="list-group-item">
+      <li>
         <%= link_to cocktail.name, cocktail_path(cocktail) %>
       </li>
     <% end %>
   </ul>
-</div>
+  <strong><%= link_to 'add new cocktail', new_cocktail_path %></strong>
+<% else %>
+  <h3>Bummer 😿</h3>
+  <p class="empty-state">
+    You don't have any cocktails yet. Get the party started by
+    <strong><%= link_to 'adding your first one now', new_cocktail_path %></strong>!
+  </p>
+<% end %>
