@@ -5,6 +5,8 @@
     <% @cocktails.each do |cocktail| %>
       <li>
         <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        <%#= cl_image_tag("https://res.cloudinary.com/lucien-andrieux/image/upload/v1604664825/knlm8xz3nfs8rzokv3ps.jpg",
+        width: 400, height: 300, crop: :fill) %>
       </li>
     <% end %>
   </ul>

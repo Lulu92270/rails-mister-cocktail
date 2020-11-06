@@ -9,6 +9,13 @@
 <% end %>
 
 <h2><%= @cocktail.name %></h2>
+
+<% if @cocktail.photo.attached? %>
+  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<% else %>
+  <p>No image has been provided yet.</p>
+<% end %>
+
 <div class="mb-4">
   <%= link_to cocktails_path do %>
     &larr; Back to list
